@@ -56,7 +56,7 @@ namespace RTSDecoder
                     decoder.CheckSpeedToSignal(_movingTypeIndex,_parameters[i].Time, _parameters[i].RealTime, _parameters[i].Signal,
                         _parameters[i].SSignal, _parameters[i].Speed);
                     decoder.CheckSignalEblan(_movingTypeIndex, _parameters[i].Time, _parameters[i].RealTime,
-                        _parameters[i].Signal, _parameters[i].Speed);
+                        _parameters[i].Signal, _parameters[i].Speed, _parameters[i].SpeedLimit);
                 }
 
                 FindSpeedA();

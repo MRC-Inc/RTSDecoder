@@ -80,32 +80,22 @@ namespace RTSDecoder
             posColumn.DefaultCellStyle.Format = "#0.0 м";
             dataGridView.Columns.Add(posColumn);
 
-            DataGridViewTextBoxColumn eptColumn = new DataGridViewTextBoxColumn();
-            eptColumn.DataPropertyName = "EPT";
-            eptColumn.HeaderText = "ЭПТ";
-            dataGridView.Columns.Add(eptColumn);
-
-            DataGridViewTextBoxColumn sandColumn = new DataGridViewTextBoxColumn();
-            sandColumn.DataPropertyName = "Sand";
-            sandColumn.HeaderText = "Песок";
-            dataGridView.Columns.Add(sandColumn);
-
             DataGridViewTextBoxColumn kmColumn = new DataGridViewTextBoxColumn();
             kmColumn.DataPropertyName = "KM";
             kmColumn.HeaderText = "Позиция";
             dataGridView.Columns.Add(kmColumn);
+            
+            DataGridViewTextBoxColumn urColumn = new DataGridViewTextBoxColumn();
+            urColumn.DataPropertyName = "UR";
+            urColumn.HeaderText = "УР";
+            urColumn.DefaultCellStyle.Format = "#0.0 кгс/см2";
+            dataGridView.Columns.Add(urColumn);
 
             DataGridViewTextBoxColumn tmColumn = new DataGridViewTextBoxColumn();
             tmColumn.DataPropertyName = "TM";
             tmColumn.HeaderText = "ТМ";
             tmColumn.DefaultCellStyle.Format = "#0.0 кгс/см2";
             dataGridView.Columns.Add(tmColumn);
-
-            DataGridViewTextBoxColumn urColumn = new DataGridViewTextBoxColumn();
-            urColumn.DataPropertyName = "UR";
-            urColumn.HeaderText = "УР";
-            urColumn.DefaultCellStyle.Format = "#0.0 кгс/см2";
-            dataGridView.Columns.Add(urColumn);
 
             DataGridViewTextBoxColumn tcColumn = new DataGridViewTextBoxColumn();
             tcColumn.DataPropertyName = "TC";
@@ -117,6 +107,16 @@ namespace RTSDecoder
             lmColumn.DataPropertyName = "LM";
             lmColumn.HeaderText = "ЛТ";
             dataGridView.Columns.Add(lmColumn);
+            
+            DataGridViewTextBoxColumn eptColumn = new DataGridViewTextBoxColumn();
+            eptColumn.DataPropertyName = "EPT";
+            eptColumn.HeaderText = "ЭПТ";
+            dataGridView.Columns.Add(eptColumn);
+
+            DataGridViewTextBoxColumn sandColumn = new DataGridViewTextBoxColumn();
+            sandColumn.DataPropertyName = "Sand";
+            sandColumn.HeaderText = "Песок";
+            dataGridView.Columns.Add(sandColumn);
 
             DataGridViewTextBoxColumn pathColumn = new DataGridViewTextBoxColumn();
             pathColumn.DataPropertyName = "Path";

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RTSDecoder.exe" size="1722880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RTSDecoder.exe" size="1723904">
       <assemblyIdentity name="RTSDecoder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hqO99gJFggiaDr8KyegepHPnjyQqnDrLBbLV9GznTw4=</dsig:DigestValue>
+        <dsig:DigestValue>uzwDsM44P8YmcOJAaDr99pJUbIXxOULCSeD/3BYMA9M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

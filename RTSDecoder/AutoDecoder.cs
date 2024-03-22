@@ -62,12 +62,29 @@ namespace RTSDecoder
         }
 
         private string _prevSignal;
-        public void CheckSignalEblan(int movingTypeIndex, DateTime gameTime, DateTime realTime, string signal, double speed)
+        public void CheckSignalEblan(int movingTypeIndex, DateTime gameTime, DateTime realTime, string signal, double speed, double limit)
         {
             if (signal == "К" & _prevSignal == "КЖ")
             {
                 _type = "Eblan";
-                _description = "Проезд сигнала с запрещающим показанием. (Факт: " + Math.Round(speed, 2) + " км/ч, Лок: " + signal + ")";
+                _description = "Проезд сигнала с запрещающим показанием. (Допуст: " + limit + " Факт: " + Math.Round(speed, 2) + " км/ч, Лок: " + signal + ")";
+                _values = _dataList.Where(item => item.Time == gameTime);
+
+                CheckData data = new CheckData
+                {
+                    GameTime = gameTime,
+                    RealTime = realTime,
+                    Type = _type,
+                    Description = _description,
+                    Values = _values
+                };
+                _checkDataList.Add(data);
+                _prevSignal = null;
+            }
+            else if (signal == "КЖ" & limit == 0 & speed > 0)
+            {
+                _type = "Eblan";
+                _description = "Проезд сигнала с запрещающим показанием. (Допуст: " + limit + " Факт: " + Math.Round(speed, 2) + " км/ч, Лок: " + signal + ")";
                 _values = _dataList.Where(item => item.Time == gameTime);
 
                 CheckData data = new CheckData

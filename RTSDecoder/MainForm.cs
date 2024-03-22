@@ -124,7 +124,7 @@ namespace RTSDecoder
             var parameterSpeedAxis = new LinearAxis
             {
                 StartPosition = 0.20,
-                EndPosition = 0.50,
+                EndPosition = 0.48,
                 Position = AxisPosition.Left,
                 MajorGridlineStyle = LineStyle.Solid,
                 MinorGridlineStyle = LineStyle.Dot,
@@ -138,7 +138,7 @@ namespace RTSDecoder
 
             var parameterPathAxis = new LinearAxis
             {
-                EndPosition = 0.20,
+                EndPosition = 0.18,
                 Position = AxisPosition.Left,
                 Title = "Профиль",
                 Key = "Path"
@@ -149,6 +149,10 @@ namespace RTSDecoder
             {
                 var time = data.Time;
                 if (_showRealTime == 1) { time = data.RealTime; }
+                
+                //DateTime currentTime = time;
+                //DateTime newDate = new DateTime(2024, 1, 1);
+                //DateTime updatedTime = currentTime.Add(newDate.Subtract(newDate.Date));
 
                 tmLine.Points.Add(new DataPoint(DateTimeAxis.ToDouble(time), data.Tm));
                 tmLine.YAxisKey = "Main";
@@ -257,7 +261,7 @@ namespace RTSDecoder
                     {
                         case 1:
                             signalTitle = "КЖ";
-                            if (sSignal <= 400 && sSignal > 100) { limit = 20; } else if (sSignal <= 100) { limit = 5; }
+                            if (sSignal <= 400) { limit = 20; }
                             break;
                         case 2:
                             signalTitle = "Б";
@@ -290,7 +294,6 @@ namespace RTSDecoder
                     int curMass = Convert.ToInt32(double.Parse(parts[33], System.Globalization.CultureInfo.InvariantCulture)) / 1000;
                     double curLength = double.Parse(parts[37], System.Globalization.CultureInfo.InvariantCulture);
                     double curFuel = double.Parse(parts[29], System.Globalization.CultureInfo.InvariantCulture);
-                    //Console.WriteLine($"Ошибка при чтении данных: {curTM}, {curLM}, {curTC}");
 
                     MovementData data = new MovementData
                     {
@@ -384,6 +387,8 @@ namespace RTSDecoder
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string[] filePaths = openFileDialog.FileNames;
+                    
+                    Array.Sort(filePaths, (a, b) => File.GetCreationTime(a).CompareTo(File.GetCreationTime(b)));
 
                     foreach (string filePath in filePaths)
                     {
