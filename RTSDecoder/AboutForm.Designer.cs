@@ -40,15 +40,14 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(6);
-            this.label1.Size = new System.Drawing.Size(304, 52);
+            this.label1.Size = new System.Drawing.Size(304, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "RTSDecoder - Расшифровщик параметров движения записанных RTS, разработанный для п" +
-    "роекта MaDaDev.\r\n\r\nТекущая версия: {version}\r\n\r\nАвтор - Mr_Claush";
+            this.label1.Text = "RTSDecoder - Расшифровщик параметров движения записанных RTS.\r\n\r\nТекущая версия: " + "{version}\r\n\r\nАвтор - Mr_Claush";
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(0, 52);
+            this.label2.Location = new System.Drawing.Point(0, 40);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(6);
             this.label2.Size = new System.Drawing.Size(304, 24);
@@ -58,7 +57,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(0, 76);
+            this.label3.Location = new System.Drawing.Point(0, 67);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(6);
             this.label3.Size = new System.Drawing.Size(304, 25);
@@ -70,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 101);
+            this.ClientSize = new System.Drawing.Size(304, 92);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -80,7 +79,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О программе";
             this.ResumeLayout(false);
-
         }
 
         #endregion
